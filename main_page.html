@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Real Time Race Results</title>
+</head>
+<body>
+    Results last read at {{ time }}
+    <table>
+        <thead>
+            <th>Plate</th>
+            <th>Cat</th>
+            <th>Name</th>
+        </thead>
+        {% for foo in data %}
+        <tr>
+            <td>{{ foo.PLATE }}</td>
+            <td>{{ foo.CAT }}</td>
+            <td>{{ foo.NAME }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

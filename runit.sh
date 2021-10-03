@@ -1,0 +1,1 @@
+python3 main.py -i interval -e eventid -k apikey
