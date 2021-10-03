@@ -31,8 +31,8 @@ if __name__ == "__main__":
         print('main.py -i <interval> -e <eventid> -k <apikey>')
         sys.exit(2)
     interval = 5
-    event_id = '169319'
-    api_key = "WHAMSCNWEIK2PE6SV0YLP8AL2A3UV65I"
+    event_id = ''
+    api_key = ''
     for opt, arg in opts:
         if opt == '-h':
             print('test.py -i <interval> -e <eventid> -k <apikey>')
@@ -43,6 +43,15 @@ if __name__ == "__main__":
             event_id = arg
         elif opt in ("-k", "--apikey"):
             api_key = arg
+    if len(event_id) == 0:
+        print("Event ID is required:")
+        print('test.py -i <interval> -e <eventid> -k <apikey>')
+        sys.exit()
+    if len(api_key) == 0:
+        print("API Key is required:")
+        print('test.py -i <interval> -e <eventid> -k <apikey>')
+        sys.exit()
+
     results_server = ResultsSubsystem(event_id, api_key)
     results_server.start_subsystem(interval)
     webServer = HTTPServer((hostName, serverPort), MyServer)

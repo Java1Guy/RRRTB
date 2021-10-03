@@ -64,7 +64,7 @@ def test_subsystem(rrss: ResultsSubsystem):
 
 
 if __name__ == "__main__":
-    rrss = ResultsSubsystem(169319, "WHAMSCNWEIK2PE6SV0YLP8AL2A3UV65I")
+    rrss = ResultsSubsystem(0, "APIKEY")
     rrss.start_subsystem(5)
     test_subsystem(rrss)
     rrss.stop_subsystem()
